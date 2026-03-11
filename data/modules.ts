@@ -50,16 +50,16 @@ export const modules: Module[] = [
       {
         title: 'The Excel Interface',
         body: 'The Ribbon runs across the top and contains tabs like Home, Insert, Formulas, Data, and View. Each tab groups related commands.\n\nThe Name Box (top-left, shows "A1") displays the address of the currently selected cell. You can also type a cell address here and press Enter to navigate directly to it.\n\nThe Formula Bar sits next to the Name Box and shows — or lets you edit — the content or formula inside the active cell.\n\nSheet tabs at the bottom let you switch between worksheets in the same workbook.\n\nColumns run vertically and are labeled A through Z, then AA through AZ, then BA through BZ, and so on. Rows run horizontally and are numbered 1 through 1,048,576.',
-        tip: 'Press Ctrl+Home to jump to cell A1. Press Ctrl+End to jump to the last used cell in your worksheet — great for quickly seeing how large your data is.',
+        tip: 'Press Ctrl+Home (Windows) / Cmd+Home (Mac) to jump to cell A1. Press Ctrl+End (Windows) / Cmd+End (Mac) to jump to the last used cell in your worksheet — great for quickly seeing how large your data is.',
       },
       {
         title: 'Cell References',
-        body: 'Every cell has a unique address made up of its column letter and row number. For example, B3 refers to the cell at column B, row 3.\n\nTo select a cell, simply click it. The Name Box will show its address, and the Formula Bar will show its content.\n\nNavigating with the keyboard:\n• Arrow keys move one cell at a time\n• Ctrl+Arrow jumps to the last non-empty cell in that direction\n• Ctrl+End jumps to the last used cell in the sheet\n• Ctrl+Home returns to A1\n\nYou can select a range by clicking and dragging, or by holding Shift while pressing arrow keys. A range is written as TopLeft:BottomRight — for example, B2:D10.',
-        tip: 'To select an entire column, click the column letter header. To select an entire row, click the row number. Ctrl+A selects the entire sheet.',
+        body: 'Every cell has a unique address made up of its column letter and row number. For example, B3 refers to the cell at column B, row 3.\n\nTo select a cell, simply click it. The Name Box will show its address, and the Formula Bar will show its content.\n\nNavigating with the keyboard:\n• Arrow keys move one cell at a time\n• Ctrl+Arrow (Windows) / Cmd+Arrow (Mac) jumps to the last non-empty cell in that direction\n• Ctrl+End (Windows) / Cmd+End (Mac) jumps to the last used cell in the sheet\n• Ctrl+Home (Windows) / Cmd+Home (Mac) returns to A1\n\nYou can select a range by clicking and dragging, or by holding Shift while pressing arrow keys. A range is written as TopLeft:BottomRight — for example, B2:D10.',
+        tip: 'To select an entire column, click the column letter header. To select an entire row, click the row number. Ctrl+A (Windows) / Cmd+A (Mac) selects the entire sheet.',
       },
       {
         title: 'Relative vs Absolute References',
-        body: 'This concept is critical for writing formulas you can copy without errors.\n\nRelative reference (A1): When you copy a formula containing A1, Excel adjusts the reference automatically based on how far you moved. Copy =A1+B1 one row down, and it becomes =A2+B2.\n\nAbsolute reference ($A$1): The dollar signs lock the reference. No matter where you copy the formula, $A$1 always points to cell A1. Use this for constants like tax rates, exchange rates, or target values stored in a single cell.\n\nMixed references:\n• $A1 — column A is locked, row adjusts\n• A$1 — row 1 is locked, column adjusts\n\nPress F4 while your cursor is inside a cell reference in the formula bar to cycle through all four reference types: A1 → $A$1 → A$1 → $A1.',
+        body: 'This concept is critical for writing formulas you can copy without errors.\n\nRelative reference (A1): When you copy a formula containing A1, Excel adjusts the reference automatically based on how far you moved. Copy =A1+B1 one row down, and it becomes =A2+B2.\n\nAbsolute reference ($A$1): The dollar signs lock the reference. No matter where you copy the formula, $A$1 always points to cell A1. Use this for constants like tax rates, exchange rates, or target values stored in a single cell.\n\nMixed references:\n• $A1 — column A is locked, row adjusts\n• A$1 — row 1 is locked, column adjusts\n\nPress F4 (Windows) / Fn+F4 (Mac) while your cursor is inside a cell reference in the formula bar to cycle through all four reference types: A1 → $A$1 → A$1 → $A1.',
         formula: '=B5*$B$7',
         tip: 'A common mistake: copying a formula that references a tax rate cell, only to find every row points to a different cell. Always use $ when referencing a fixed input cell.',
       },
@@ -78,7 +78,7 @@ export const modules: Module[] = [
         {
           step: 1,
           instruction:
-            "Press Ctrl+End to find the last used cell. Excel jumps to the bottom-right corner of your data — note the row number (your record count) and column W (Pop.SqMile.2017, the rightmost column). This tells you the dataset's full size at a glance.",
+            "Press Ctrl+End (Windows) / Cmd+End (Mac) to find the last used cell. Excel jumps to the bottom-right corner of your data — note the row number (your record count) and column W (Pop.SqMile.2017, the rightmost column). This tells you the dataset's full size at a glance.",
           result: 'Last used cell revealed — you now know exactly how many donor records are in the file',
         },
         {
@@ -90,7 +90,7 @@ export const modules: Module[] = [
         {
           step: 3,
           instruction:
-            "With C1 selected, press Ctrl+Down. Excel jumps to the last non-empty cell in column C — the final donation amount in the file.",
+            "With C1 selected, press Ctrl+Down (Windows) / Cmd+Down (Mac). Excel jumps to the last non-empty cell in column C — the final donation amount in the file.",
           result: 'Last Amount value highlighted — confirms the column has no unexpected gaps',
         },
         {
@@ -124,14 +124,14 @@ export const modules: Module[] = [
         question:
           'You\'re in the Amount column (column C) of the donor file and want to jump to the very last donation entry without scrolling. Which keyboard shortcut is fastest?',
         options: [
-          'Ctrl+Home — jumps to A1',
-          'Ctrl+Down — jumps to the last non-empty cell in column C',
-          'Ctrl+End — jumps to the last used cell in the sheet',
-          'Alt+Page Down — scrolls one screen right',
+          'Ctrl+Home (Win) / Cmd+Home (Mac) — jumps to A1',
+          'Ctrl+Down (Win) / Cmd+Down (Mac) — jumps to the last non-empty cell in column C',
+          'Ctrl+End (Win) / Cmd+End (Mac) — jumps to the last used cell in the sheet',
+          'Alt+Page Down (Win) / Option+Page Down (Mac) — scrolls one screen right',
         ],
         correctIndex: 1,
         explanation:
-          'Ctrl+Down, when pressed from inside column C, jumps to the last non-empty cell in that column — landing exactly on the final donation amount. Ctrl+End works too but lands on column W (the rightmost used column), not column C specifically.',
+          'Ctrl+Down (Windows) / Cmd+Down (Mac), when pressed from inside column C, jumps to the last non-empty cell in that column — landing exactly on the final donation amount. Ctrl+End (Windows) / Cmd+End (Mac) works too but lands on column W (the rightmost used column), not column C specifically.',
       },
       {
         id: 'q1-3',
@@ -389,7 +389,7 @@ export const modules: Module[] = [
       {
         title: 'What is a PivotTable?',
         body: 'A PivotTable is an interactive summary table that lets you group, aggregate, and explore large datasets without writing a single formula.\n\nYou drag fields into four areas:\n• Rows: the categories you want to group by (e.g., Region, Product, Employee)\n• Columns: split your data across columns (e.g., Month, Quarter)\n• Values: the numbers you want to aggregate (e.g., Revenue, Hours, Units)\n• Filters: apply a filter to the entire table (e.g., show only Year = 2024)\n\nExcel recalculates the summary instantly as you rearrange fields. What would take hours with formulas takes minutes with a PivotTable.\n\nPivotTables are non-destructive — your source data is never changed. The PivotTable is a separate summary view that can be refreshed when the underlying data changes.',
-        tip: 'Before creating a PivotTable, format your source data as an Excel Table (Ctrl+T). This makes the data range dynamic — when you add rows, refreshing the PivotTable will automatically include the new data.',
+        tip: 'Before creating a PivotTable, format your source data as an Excel Table (Ctrl+T on Windows / Cmd+T on Mac). This makes the data range dynamic — when you add rows, refreshing the PivotTable will automatically include the new data.',
       },
       {
         title: 'Creating a PivotTable',
@@ -398,12 +398,12 @@ export const modules: Module[] = [
       },
       {
         title: 'Value Calculations',
-        body: 'When you drag a field to the Values area, Excel aggregates it. The default is:\n• SUM — for fields Excel recognizes as numbers\n• COUNT — for fields that contain text (or mixed content)\n\nTo change the aggregation: right-click any value cell in the PivotTable → Summarize Values By → choose from Sum, Count, Average, Max, Min, Product, Count Numbers, StdDev, Var.\n\nShow Values As — powerful for analysis:\n• % of Grand Total: each cell as a percentage of the overall total\n• % of Row Total: each cell as a percentage of its row total\n• % of Column Total: each cell as a percentage of its column total\n• Running Total: cumulative sum\n• Difference From: change vs. a base period (great for YoY comparisons)\n\nYou can add the same field to Values multiple times with different calculations (e.g., Sum of Amount AND % of Grand Total side by side).',
-        tip: 'Right-click a value in the PivotTable and go to "Show Values As" → "% of Grand Total" for instant composition analysis. This is one of the most-used views in executive reporting.',
+        body: 'When you drag a field to the Values area, Excel aggregates it. The default is:\n• SUM — for fields Excel recognizes as numbers\n• COUNT — for fields that contain text (or mixed content)\n\nTo change the aggregation: right-click (or Ctrl+click on Mac) any value cell in the PivotTable → Summarize Values By → choose from Sum, Count, Average, Max, Min, Product, Count Numbers, StdDev, Var.\n\nShow Values As — powerful for analysis:\n• % of Grand Total: each cell as a percentage of the overall total\n• % of Row Total: each cell as a percentage of its row total\n• % of Column Total: each cell as a percentage of its column total\n• Running Total: cumulative sum\n• Difference From: change vs. a base period (great for YoY comparisons)\n\nYou can add the same field to Values multiple times with different calculations (e.g., Sum of Amount AND % of Grand Total side by side).',
+        tip: 'Right-click (or Ctrl+click on Mac) a value in the PivotTable and go to "Show Values As" → "% of Grand Total" for instant composition analysis. This is one of the most-used views in executive reporting.',
       },
       {
         title: 'Grouping, Sorting & Filtering',
-        body: 'Date Grouping: Right-click a date field in the Rows area → Group → select grouping levels (Days, Months, Quarters, Years). Excel creates automatic hierarchy you can drill into.\n\nSorting: Click a dropdown arrow in a Row or Column header → Sort A to Z or Z to A. Or click a value cell → Data → Sort to sort the entire PivotTable by that value.\n\nFiltering: Click dropdown arrows in row/column headers to filter specific items. The Filters area adds a report-level filter.\n\nSlicers: Insert → Slicer → select fields. Slicers add visual button panels for one-click filtering. They can be shared across multiple PivotTables on the same sheet.\n\nPivotCharts: Select the PivotTable → Insert → PivotChart. Creates an interactive chart linked to the PivotTable — filters applied to the PivotTable automatically update the chart.',
+        body: 'Date Grouping: Right-click (or Ctrl+click on Mac) a date field in the Rows area → Group → select grouping levels (Days, Months, Quarters, Years). Excel creates automatic hierarchy you can drill into.\n\nSorting: Click a dropdown arrow in a Row or Column header → Sort A to Z or Z to A. Or click a value cell → Data → Sort to sort the entire PivotTable by that value.\n\nFiltering: Click dropdown arrows in row/column headers to filter specific items. The Filters area adds a report-level filter.\n\nSlicers: Insert → Slicer → select fields. Slicers add visual button panels for one-click filtering. They can be shared across multiple PivotTables on the same sheet.\n\nPivotCharts: Select the PivotTable → Insert → PivotChart. Creates an interactive chart linked to the PivotTable — filters applied to the PivotTable automatically update the chart.',
         tip: 'Use Slicers when presenting to clients. They look polished and let stakeholders filter the view themselves during a meeting — turning your spreadsheet into an interactive dashboard.',
       },
     ],
@@ -445,7 +445,7 @@ export const modules: Module[] = [
         {
           step: 6,
           instruction:
-            'Right-click any Amount value in the PivotTable → Show Values As → % of Grand Total.',
+            'Right-click (or Ctrl+click on Mac) any Amount value in the PivotTable → Show Values As → % of Grand Total.',
           result: 'Each payment channel shown as a percentage of total giving — ideal for a board summary slide',
         },
       ],
@@ -466,13 +466,13 @@ export const modules: Module[] = [
           'The nonprofit adds 100 new donor records to the bottom of sample.csv. You switch back to the PivotTable sheet. Are the new records reflected automatically?',
         options: [
           'Yes — PivotTables update in real time',
-          'No — right-click the PivotTable and select Refresh to update it',
+          'No — right-click (or Ctrl+click on Mac) the PivotTable and select Refresh to update it',
           'No — delete and recreate the PivotTable to include new data',
           'Yes — but only if you dragged Amount to Values again',
         ],
         correctIndex: 1,
         explanation:
-          'PivotTables do not update automatically. Right-click anywhere in the PivotTable and select Refresh (or use Data → Refresh All). If your source data is formatted as an Excel Table (Ctrl+T), the range expands automatically — you still need to Refresh.',
+          'PivotTables do not update automatically. Right-click (or Ctrl+click on Mac) anywhere in the PivotTable and select Refresh (or use Data → Refresh All). If your source data is formatted as an Excel Table (Ctrl+T on Windows / Cmd+T on Mac), the range expands automatically — you still need to Refresh.',
       },
       {
         id: 'q4-3',
@@ -507,17 +507,17 @@ export const modules: Module[] = [
       {
         title: 'Creating a Chart',
         body: 'Step-by-step:\n1. Select your data range including headers (e.g., A1:C9)\n2. Go to Insert → Charts group → choose your chart type\n3. Excel creates a default chart on the current sheet\n\nOnce the chart is selected, two contextual tabs appear:\n• Chart Design: change chart type, switch rows/columns, select data, apply a chart style, move chart to another sheet\n• Format: format individual chart elements (title, axes, series, plot area)\n\nResizing: drag the corner handles of the chart border.\nMoving: click and drag the chart border (not a handle) to reposition.\nMoving to its own sheet: Chart Design → Move Chart → New Sheet (gives the chart its own full-page sheet — useful for dashboards).\n\nTo select individual elements (title, a specific data series, axis): click once to select the whole chart, then click again on the specific element.',
-        tip: "Right-click directly on a chart element (a bar, a line, the title) to get a context menu with formatting options specific to that element. This is faster than navigating the ribbon tabs.",
+        tip: "Right-click (or Ctrl+click on Mac) directly on a chart element (a bar, a line, the title) to get a context menu with formatting options specific to that element. This is faster than navigating the ribbon tabs.",
       },
       {
         title: 'Formatting for Client Deliverables',
         body: "A chart for internal analysis can be rough. A chart going to a client or into a board deck must be polished. The difference is in what you remove as much as what you add.\n\nRemove chart junk:\n• Delete major gridlines (click a gridline → Delete)\n• Remove the chart border (Format Chart Area → No Border)\n• Simplify or remove the legend if it duplicates information already in a title or labels\n\nAdd clarity:\n• Write a specific title: not 'Amount' but 'Total Donations by Payment Method ($)'\n• Add data labels directly on bars or lines — they eliminate guesswork and often make the y-axis redundant\n• Set axis min/max manually to avoid misleading truncation (Format Axis → Bounds)\n\nColor discipline:\n• Use 2-3 colors maximum\n• Use your client's brand colors or a clean neutral palette\n• Make the most important series the most visually prominent (thicker line, darker color)\n• Desaturate supporting series (gray for targets, benchmarks, or prior periods)",
-        tip: "Copy your chart in Excel, then Paste Special → Picture (PNG or EMF) in PowerPoint. This creates a static image that cannot be accidentally edited during a client meeting — a critical protection.",
+        tip: "Copy your chart in Excel (Ctrl+C on Windows / Cmd+C on Mac), then use Paste Special in PowerPoint (Ctrl+Alt+V on Windows / Cmd+Option+V on Mac) → Picture (PNG or EMF). This creates a static image that cannot be accidentally edited during a client meeting — a critical protection.",
       },
       {
         title: 'Chart Elements & Polish',
-        body: 'Fine-tuning chart elements:\n\nChart Title: double-click to edit in place. You can link it to a cell: type = in the formula bar while the title is selected, then click the cell — the title dynamically updates when the cell changes.\n\nAxis: double-click an axis to open Format Axis. Set Minimum and Maximum bounds manually to control the scale. Display Units (Thousands, Millions) keeps the axis readable for large numbers.\n\nData Labels: right-click a data series → Add Data Labels. Right-click the labels → Format Data Labels to choose position (Above, Inside End, Outside End) and content (Value, Percentage, Series Name, Category Name).\n\nLegend: if you have one series, delete the legend — the chart title should make the series clear. If you have multiple series, move the legend to the bottom (less space wasted on the side).\n\nExporting: right-click the chart → Copy. In PowerPoint → Paste Special → select Picture (Enhanced Metafile or PNG) for a crisp, non-editable image safe from accidental changes.',
-        tip: "To update all charts consistently, use chart templates: format one chart perfectly, right-click → Save as Template. Then right-click other charts → Change Chart Type → Templates to apply the same formatting.",
+        body: 'Fine-tuning chart elements:\n\nChart Title: double-click to edit in place. You can link it to a cell: type = in the formula bar while the title is selected, then click the cell — the title dynamically updates when the cell changes.\n\nAxis: double-click an axis to open Format Axis. Set Minimum and Maximum bounds manually to control the scale. Display Units (Thousands, Millions) keeps the axis readable for large numbers.\n\nData Labels: right-click (or Ctrl+click on Mac) a data series → Add Data Labels. Right-click (or Ctrl+click on Mac) the labels → Format Data Labels to choose position (Above, Inside End, Outside End) and content (Value, Percentage, Series Name, Category Name).\n\nLegend: if you have one series, delete the legend — the chart title should make the series clear. If you have multiple series, move the legend to the bottom (less space wasted on the side).\n\nExporting: right-click (or Ctrl+click on Mac) the chart → Copy. In PowerPoint, use Paste Special (Ctrl+Alt+V on Windows / Cmd+Option+V on Mac) → select Picture (Enhanced Metafile or PNG) for a crisp, non-editable image safe from accidental changes.',
+        tip: "To update all charts consistently, use chart templates: format one chart perfectly, right-click (or Ctrl+click on Mac) → Save as Template. Then right-click (or Ctrl+click on Mac) other charts → Change Chart Type → Templates to apply the same formatting.",
       },
     ],
     workedExample: {
@@ -540,25 +540,25 @@ export const modules: Module[] = [
         {
           step: 3,
           instruction:
-            'Right-click the bars → Add Data Labels → Outside End. Right-click the labels → Format Data Labels → select "Value".',
+            'Right-click (or Ctrl+click on Mac) the bars → Add Data Labels → Outside End. Right-click (or Ctrl+click on Mac) the labels → Format Data Labels → select "Value".',
           result: 'Dollar amounts appear above each bar — board members can read exact figures without squinting at the axis',
         },
         {
           step: 4,
           instruction:
-            'Click any gridline → Delete to remove all gridlines. Right-click the chart border → Format Chart Area → No Border.',
+            'Click any gridline → Delete to remove all gridlines. Right-click (or Ctrl+click on Mac) the chart border → Format Chart Area → No Border.',
           result: 'Clean, minimal chart — the data speaks without visual noise',
         },
         {
           step: 5,
           instruction:
-            'Right-click the "Check" bar (likely the tallest) → Format Data Series → Fill → Solid Fill → set color to navy blue (#1B2A4A). Set the other bars to light gray (#D3D3D3).',
+            'Right-click (or Ctrl+click on Mac) the "Check" bar (likely the tallest) → Format Data Series → Fill → Solid Fill → set color to navy (#1B2A4A). Set the other bars to light gray (#D3D3D3).',
           result: 'Visual hierarchy: the dominant giving channel stands out; others provide context without competing for attention',
         },
         {
           step: 6,
           instruction:
-            'Right-click the chart → Copy. In PowerPoint → Paste Special → Picture (PNG).',
+            'Right-click (or Ctrl+click on Mac) the chart → Copy. In PowerPoint, use Paste Special (Ctrl+Alt+V on Windows / Cmd+Option+V on Mac) → Picture (PNG).',
           result: 'Board-ready static image — locked against accidental edits during the presentation',
         },
       ],
