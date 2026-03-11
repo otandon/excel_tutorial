@@ -26,17 +26,17 @@ export default function CompletionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-excel-light via-white to-white">
+    <div className="min-h-screen bg-gradient-to-br from-laci-light via-white to-white">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 bg-white/80 backdrop-blur sticky top-0 z-40">
+      <nav className="bg-laci sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-sm font-bold text-gray-700 hover:text-excel transition-colors">
+          <Link href="/" className="flex items-center gap-2 text-sm font-bold text-white hover:text-white/80 transition-colors">
             <span className="text-xl">📊</span>
-            <span>Excel for Consultants</span>
+            <span className="tracking-wide">LACI Excel Workshop</span>
           </Link>
           <button
             onClick={handleRestart}
-            className="text-sm font-semibold text-gray-500 hover:text-excel transition-colors"
+            className="text-sm font-semibold text-white/70 hover:text-white transition-colors"
           >
             Restart Course
           </button>
@@ -52,8 +52,11 @@ export default function CompletionPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-xl mx-auto leading-relaxed">
             You have completed the{' '}
-            <span className="text-excel font-bold">Excel for Consultants</span> course. You now have
-            the Excel skills that power real consulting work.
+            <span className="text-laci font-bold">LACI Excel Workshop</span>. You now have
+            the Excel skills that power real professional work.
+          </p>
+          <p className="text-sm text-laci font-medium mt-3 tracking-wide">
+            A training resource by Los Angeles Community Impact
           </p>
         </div>
 
@@ -64,11 +67,11 @@ export default function CompletionPage() {
           {/* Big score display */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
             <div className="text-center">
-              <div className="inline-flex flex-col items-center justify-center w-36 h-36 rounded-full border-4 border-excel bg-excel-light">
-                <span className="text-4xl font-black text-excel">
+              <div className="inline-flex flex-col items-center justify-center w-36 h-36 rounded-full border-4 border-laci bg-laci-light">
+                <span className="text-4xl font-black text-laci">
                   {totalScore}/{totalQuestions}
                 </span>
-                <span className="text-sm font-semibold text-excel-dark">Total Score</span>
+                <span className="text-sm font-semibold text-laci-dark">Total Score</span>
               </div>
             </div>
 
@@ -77,11 +80,11 @@ export default function CompletionPage() {
               <div>
                 <div className="flex justify-between text-sm font-semibold mb-1.5">
                   <span className="text-gray-700">Quiz Accuracy</span>
-                  <span className="text-excel">{pct}%</span>
+                  <span className="text-laci">{pct}%</span>
                 </div>
                 <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-excel rounded-full transition-all duration-1000"
+                    className="h-full bg-laci rounded-full transition-all duration-1000"
                     style={{ width: `${pct}%` }}
                   />
                 </div>
@@ -91,11 +94,11 @@ export default function CompletionPage() {
               <div>
                 <div className="flex justify-between text-sm font-semibold mb-1.5">
                   <span className="text-gray-700">Modules Completed</span>
-                  <span className="text-excel">{completedModules}/5</span>
+                  <span className="text-laci">{completedModules}/5</span>
                 </div>
                 <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-excel rounded-full transition-all duration-1000"
+                    className="h-full bg-laci rounded-full transition-all duration-1000"
                     style={{ width: `${(completedModules / 5) * 100}%` }}
                   />
                 </div>
@@ -105,7 +108,7 @@ export default function CompletionPage() {
               <div
                 className={`text-sm font-medium px-4 py-2 rounded-lg ${
                   pct === 100
-                    ? 'bg-green-50 text-green-800'
+                    ? 'bg-laci-light text-laci'
                     : pct >= 80
                     ? 'bg-blue-50 text-blue-800'
                     : pct >= 60
@@ -160,7 +163,7 @@ export default function CompletionPage() {
                       </div>
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
-                          completed ? 'bg-excel text-white' : 'bg-gray-100 text-gray-400'
+                          completed ? 'bg-laci text-white' : 'bg-gray-100 text-gray-400'
                         }`}
                       >
                         {completed ? '✓' : '–'}
@@ -174,23 +177,24 @@ export default function CompletionPage() {
         </div>
 
         {/* Certificate visual */}
-        <div className="bg-white rounded-2xl border-2 border-excel/30 shadow-md p-8 mb-8 text-center relative overflow-hidden">
+        <div className="bg-white rounded-2xl border-2 border-laci/30 shadow-md p-8 mb-8 text-center relative overflow-hidden">
           {/* Decorative corners */}
-          <div className="absolute top-3 left-3 text-excel/20 text-4xl font-serif">✦</div>
-          <div className="absolute top-3 right-3 text-excel/20 text-4xl font-serif">✦</div>
-          <div className="absolute bottom-3 left-3 text-excel/20 text-4xl font-serif">✦</div>
-          <div className="absolute bottom-3 right-3 text-excel/20 text-4xl font-serif">✦</div>
+          <div className="absolute top-3 left-3 text-laci/20 text-4xl font-serif">✦</div>
+          <div className="absolute top-3 right-3 text-laci/20 text-4xl font-serif">✦</div>
+          <div className="absolute bottom-3 left-3 text-laci/20 text-4xl font-serif">✦</div>
+          <div className="absolute bottom-3 right-3 text-laci/20 text-4xl font-serif">✦</div>
 
           <div className="text-5xl mb-3">🎓</div>
-          <div className="text-xs font-bold text-excel uppercase tracking-widest mb-2">
+          <div className="text-xs font-bold text-laci uppercase tracking-widest mb-2">
             Certificate of Completion
           </div>
-          <h3 className="text-2xl font-black text-gray-900 mb-1">Excel for Consultants</h3>
-          <p className="text-gray-500 text-sm mb-4">Interactive Tutorial Course</p>
+          <h3 className="text-2xl font-black text-gray-900 mb-1">LACI Excel Workshop</h3>
+          <p className="text-gray-500 text-sm mb-1">Los Angeles Community Impact</p>
+          <p className="text-gray-400 text-xs mb-4">Interactive Training Course</p>
 
-          <div className="inline-block bg-excel-light border border-excel/30 rounded-xl px-6 py-3 mb-4">
-            <div className="text-3xl font-black text-excel">{totalScore}/{totalQuestions}</div>
-            <div className="text-xs text-excel-dark font-semibold">Points Earned</div>
+          <div className="inline-block bg-laci-light border border-laci/30 rounded-xl px-6 py-3 mb-4">
+            <div className="text-3xl font-black text-laci">{totalScore}/{totalQuestions}</div>
+            <div className="text-xs text-laci-dark font-semibold">Points Earned</div>
           </div>
 
           <p className="text-xs text-gray-400 italic">
@@ -203,7 +207,7 @@ export default function CompletionPage() {
         <div className="flex flex-col sm:flex-row gap-4">
           <button
             onClick={handleRestart}
-            className="flex-1 bg-excel hover:bg-excel-dark text-white font-bold py-4 px-6 rounded-xl transition-colors duration-200 text-base"
+            className="flex-1 bg-laci hover:bg-laci-dark text-white font-bold py-4 px-6 rounded-xl transition-colors duration-200 text-base"
           >
             🔄 Restart Course
           </button>

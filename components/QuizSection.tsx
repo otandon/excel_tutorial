@@ -97,11 +97,11 @@ export default function QuizSection({ module }: QuizSectionProps) {
           </p>
 
           {/* Score ring */}
-          <div className="inline-flex flex-col items-center justify-center w-32 h-32 rounded-full border-4 border-excel bg-excel-light mb-6">
-            <span className="text-3xl font-black text-excel">
+          <div className="inline-flex flex-col items-center justify-center w-32 h-32 rounded-full border-4 border-laci bg-laci-light mb-6">
+            <span className="text-3xl font-black text-laci">
               {score}/{total}
             </span>
-            <span className="text-xs font-semibold text-excel-dark">{pct}%</span>
+            <span className="text-xs font-semibold text-laci-dark">{pct}%</span>
           </div>
 
           {/* Score message */}
@@ -127,7 +127,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
                     className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       answered !== undefined
                         ? correct
-                          ? 'bg-green-100 text-green-700'
+                          ? 'bg-laci-light text-laci'
                           : 'bg-red-100 text-red-700'
                         : 'bg-gray-200 text-gray-500'
                     }`}
@@ -139,7 +139,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
                       Q{i + 1}: {q.question}
                     </p>
                     {answered !== undefined && !correct && (
-                      <p className="text-xs text-green-700 mt-0.5">
+                      <p className="text-xs text-laci mt-0.5">
                         Correct: {OPTION_LETTERS[q.correctIndex]}. {q.options[q.correctIndex]}
                       </p>
                     )}
@@ -153,14 +153,14 @@ export default function QuizSection({ module }: QuizSectionProps) {
           {isLast ? (
             <button
               onClick={() => router.push('/completion')}
-              className="w-full bg-excel hover:bg-excel-dark text-white font-bold py-4 rounded-xl transition-colors duration-200 text-base"
+              className="w-full bg-laci hover:bg-laci-dark text-white font-bold py-4 rounded-xl transition-colors duration-200 text-base"
             >
               🎉 See Your Final Results →
             </button>
           ) : (
             <button
               onClick={handleNavigateNext}
-              className="w-full bg-excel hover:bg-excel-dark text-white font-bold py-4 rounded-xl transition-colors duration-200 text-base"
+              className="w-full bg-laci hover:bg-laci-dark text-white font-bold py-4 rounded-xl transition-colors duration-200 text-base"
             >
               Next Module: {module.id + 1} →
             </button>
@@ -184,9 +184,9 @@ export default function QuizSection({ module }: QuizSectionProps) {
                 key={q.id}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   answered
-                    ? 'bg-excel w-8'
+                    ? 'bg-laci w-8'
                     : isCurrent
-                    ? 'bg-excel/40 w-6'
+                    ? 'bg-laci/40 w-6'
                     : 'bg-gray-200 w-4'
                 }`}
               />
@@ -205,7 +205,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
           <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
             {module.title}
           </span>
-          <span className="text-sm font-semibold text-excel bg-excel-light px-3 py-1 rounded-full">
+          <span className="text-sm font-semibold text-laci bg-laci-light px-3 py-1 rounded-full">
             {localScore} correct so far
           </span>
         </div>
@@ -225,9 +225,9 @@ export default function QuizSection({ module }: QuizSectionProps) {
               'w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 text-left transition-all duration-200 text-sm font-medium ';
 
             if (!isAnswered) {
-              buttonClass += 'border-gray-200 hover:border-excel hover:bg-excel-light text-gray-700 cursor-pointer';
+              buttonClass += 'border-gray-200 hover:border-laci hover:bg-laci-light text-gray-700 cursor-pointer';
             } else if (isCorrect) {
-              buttonClass += 'border-green-500 bg-green-50 text-green-800 cursor-default';
+              buttonClass += 'border-laci bg-laci-light text-laci cursor-default';
             } else if (isSelected && !isCorrect) {
               buttonClass += 'border-red-400 bg-red-50 text-red-800 cursor-default';
             } else {
@@ -246,7 +246,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
                     !isAnswered
                       ? 'border-gray-300 text-gray-500'
                       : isCorrect
-                      ? 'border-green-500 bg-green-500 text-white'
+                      ? 'border-laci bg-laci text-white'
                       : isSelected
                       ? 'border-red-400 bg-red-400 text-white'
                       : 'border-gray-200 text-gray-400'
@@ -256,7 +256,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
                 </span>
                 <span className="flex-1">{option}</span>
                 {isAnswered && isCorrect && (
-                  <span className="flex-shrink-0 text-green-600 font-bold">✓</span>
+                  <span className="flex-shrink-0 text-laci font-bold">✓</span>
                 )}
                 {isAnswered && isSelected && !isCorrect && (
                   <span className="flex-shrink-0 text-red-500 font-bold">✗</span>
@@ -271,7 +271,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
           <div
             className={`mt-5 rounded-xl p-4 flex gap-3 border ${
               selectedAnswer === question.correctIndex
-                ? 'bg-green-50 border-green-200'
+                ? 'bg-laci-light border-laci/30'
                 : 'bg-red-50 border-red-200'
             }`}
           >
@@ -281,14 +281,14 @@ export default function QuizSection({ module }: QuizSectionProps) {
             <div>
               <div
                 className={`text-xs font-bold uppercase tracking-wider mb-1 ${
-                  selectedAnswer === question.correctIndex ? 'text-green-700' : 'text-red-700'
+                  selectedAnswer === question.correctIndex ? 'text-laci' : 'text-red-700'
                 }`}
               >
                 {selectedAnswer === question.correctIndex ? 'Correct!' : 'Not quite'}
               </div>
               <p
                 className={`text-sm leading-relaxed ${
-                  selectedAnswer === question.correctIndex ? 'text-green-900' : 'text-red-900'
+                  selectedAnswer === question.correctIndex ? 'text-laci' : 'text-red-900'
                 }`}
               >
                 {question.explanation}
@@ -302,7 +302,7 @@ export default function QuizSection({ module }: QuizSectionProps) {
       {isAnswered && (
         <button
           onClick={handleNext}
-          className="w-full bg-excel hover:bg-excel-dark text-white font-bold py-4 rounded-xl transition-all duration-200 text-base shadow-sm hover:shadow-md"
+          className="w-full bg-laci hover:bg-laci-dark text-white font-bold py-4 rounded-xl transition-all duration-200 text-base shadow-sm hover:shadow-md"
         >
           {isLastQuestion ? 'Complete Module →' : 'Next Question →'}
         </button>

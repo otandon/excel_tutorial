@@ -34,7 +34,7 @@ export default function ModuleHeader({ module, activeTab, onTabChange }: ModuleH
           <div className="text-4xl flex-shrink-0 mt-0.5">{module.icon}</div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-1">
-              <span className="text-xs font-bold text-excel bg-excel-light px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-bold text-laci bg-laci-light px-2.5 py-0.5 rounded-full">
                 Module {module.id}
               </span>
               <LevelBadge level={module.level} />
@@ -54,7 +54,7 @@ export default function ModuleHeader({ module, activeTab, onTabChange }: ModuleH
           onClick={() => onTabChange('learn')}
           className={`relative px-5 py-3 text-sm font-semibold transition-colors duration-150 focus:outline-none ${
             activeTab === 'learn'
-              ? 'text-excel border-b-2 border-excel'
+              ? 'text-laci border-b-2 border-laci'
               : 'text-gray-500 hover:text-gray-700 border-b-2 border-transparent'
           }`}
         >
@@ -64,7 +64,7 @@ export default function ModuleHeader({ module, activeTab, onTabChange }: ModuleH
           onClick={() => onTabChange('quiz')}
           className={`relative px-5 py-3 text-sm font-semibold transition-colors duration-150 focus:outline-none ${
             activeTab === 'quiz'
-              ? 'text-excel border-b-2 border-excel'
+              ? 'text-laci border-b-2 border-laci'
               : 'text-gray-500 hover:text-gray-700 border-b-2 border-transparent'
           }`}
         >

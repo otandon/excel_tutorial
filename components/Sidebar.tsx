@@ -33,14 +33,14 @@ export default function Sidebar() {
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Brand Header */}
-      <div className="px-4 py-4 border-b border-gray-200">
+      <div className="px-4 py-4 bg-laci border-b border-laci-dark">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-2xl">📊</span>
           <div>
-            <div className="font-bold text-gray-900 text-sm leading-tight group-hover:text-excel transition-colors">
-              Excel for Consultants
+            <div className="font-bold text-white text-sm leading-tight tracking-wide">
+              LACI Excel Workshop
             </div>
-            <div className="text-xs text-gray-500">Interactive Tutorial</div>
+            <div className="text-xs text-white/60">Interactive Tutorial</div>
           </div>
         </Link>
       </div>
@@ -68,8 +68,8 @@ export default function Sidebar() {
                     onClick={() => setMobileOpen(false)}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-150 group ${
                       isActive
-                        ? 'bg-excel text-white shadow-sm'
-                        : 'hover:bg-excel-light text-gray-700'
+                        ? 'bg-laci text-white shadow-sm'
+                        : 'hover:bg-laci-light text-gray-700'
                     }`}
                   >
                     <span className="text-xl flex-shrink-0">{mod.icon}</span>
@@ -86,7 +86,7 @@ export default function Sidebar() {
                     {isCompleted ? (
                       <span
                         className={`text-lg flex-shrink-0 ${
-                          isActive ? 'text-green-200' : 'text-excel'
+                          isActive ? 'text-white/80' : 'text-laci'
                         }`}
                         title="Completed"
                       >
@@ -115,10 +115,10 @@ export default function Sidebar() {
       </nav>
 
       {/* Score Footer */}
-      <div className="border-t border-gray-200 px-4 py-3 bg-excel-light">
+      <div className="border-t border-gray-200 px-4 py-3 bg-laci-light">
         <div className="flex items-center justify-between">
           <span className="text-sm text-gray-600 font-medium">Total Score</span>
-          <span className="text-lg font-bold text-excel">
+          <span className="text-lg font-bold text-laci">
             {totalScore} / {totalQuestions}
           </span>
         </div>

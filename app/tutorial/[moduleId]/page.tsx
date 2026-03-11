@@ -62,14 +62,14 @@ export default function TutorialPage() {
             <h1 className="text-2xl font-bold text-gray-900 mb-3">Module Locked</h1>
             <p className="text-gray-600 mb-6">
               Complete{' '}
-              <span className="font-semibold text-excel">
+              <span className="font-semibold text-laci">
                 Module {moduleId - 1}: {prevModule?.title}
               </span>{' '}
               to unlock this module.
             </p>
             <Link
               href={`/tutorial/${moduleId - 1}`}
-              className="bg-excel hover:bg-excel-dark text-white font-bold px-6 py-3 rounded-xl transition-colors duration-200 inline-flex items-center gap-2"
+              className="bg-laci hover:bg-laci-dark text-white font-bold px-6 py-3 rounded-xl transition-colors duration-200 inline-flex items-center gap-2"
             >
               ← Go to Module {moduleId - 1}
             </Link>
@@ -106,14 +106,14 @@ export default function TutorialPage() {
               {prevModule ? (
                 <Link
                   href={`/tutorial/${prevModule.id}`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-excel transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-laci transition-colors"
                 >
                   ← {prevModule.icon} {prevModule.title}
                 </Link>
               ) : (
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-excel transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-laci transition-colors"
                 >
                   ← Home
                 </Link>
@@ -128,9 +128,9 @@ export default function TutorialPage() {
                   href={`/tutorial/${m.id}`}
                   className={`w-2 h-2 rounded-full transition-all duration-200 ${
                     m.id === moduleId
-                      ? 'bg-excel w-5'
+                      ? 'bg-laci w-5'
                       : moduleStatus[m.id]?.completed
-                      ? 'bg-excel/50'
+                      ? 'bg-laci/50'
                       : 'bg-gray-300'
                   }`}
                   title={`Module ${m.id}: ${m.title}`}
@@ -143,7 +143,7 @@ export default function TutorialPage() {
                 isCompleted ? (
                   <Link
                     href={`/tutorial/${nextModule.id}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-excel hover:text-excel-dark transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-laci hover:text-laci-dark transition-colors"
                   >
                     {nextModule.icon} {nextModule.title} →
                   </Link>
@@ -159,7 +159,7 @@ export default function TutorialPage() {
               ) : isCompleted ? (
                 <Link
                   href="/completion"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-excel hover:text-excel-dark transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-laci hover:text-laci-dark transition-colors"
                 >
                   Finish Course 🎉
                 </Link>

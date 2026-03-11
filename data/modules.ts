@@ -552,7 +552,7 @@ export const modules: Module[] = [
         {
           step: 5,
           instruction:
-            'Right-click the "Check" bar (likely the tallest) → Format Data Series → Fill → Solid Fill → set color to dark green (#217346). Set the other bars to light gray (#D3D3D3).',
+            'Right-click the "Check" bar (likely the tallest) → Format Data Series → Fill → Solid Fill → set color to navy blue (#1B2A4A). Set the other bars to light gray (#D3D3D3).',
           result: 'Visual hierarchy: the dominant giving channel stands out; others provide context without competing for attention',
         },
         {

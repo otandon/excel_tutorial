@@ -18,15 +18,15 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 bg-white sticky top-0 z-40">
+      <nav className="bg-laci sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl">📊</span>
-            <span className="font-bold text-gray-900 text-sm sm:text-base">Excel for Consultants</span>
+            <span className="font-bold text-white text-sm sm:text-base tracking-wide">LACI Excel Workshop</span>
           </div>
           <Link
             href="/tutorial/1"
-            className="bg-excel hover:bg-excel-dark text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200"
+            className="bg-white hover:bg-laci-light text-laci text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-200"
           >
             Start Learning →
           </Link>
@@ -34,20 +34,24 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-excel-light via-white to-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-laci-light via-white to-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-excel/10 text-excel font-semibold text-sm px-4 py-2 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-laci/10 text-laci font-semibold text-sm px-4 py-2 rounded-full mb-6">
             <span>🎓</span>
             <span>Free Interactive Course</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-4">
             Excel for{' '}
-            <span className="text-excel">Consultants</span>
+            <span className="text-laci">Consultants</span>
           </h1>
 
+          <p className="text-sm font-medium text-laci mb-5 tracking-wide">
+            A training resource by Los Angeles Community Impact
+          </p>
+
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-            Master the Excel skills used by top management consultants — from foundations and essential functions to
+            Master the Excel skills used in professional consulting work — from foundations and essential functions to
             VLOOKUP, PivotTables, and presentation-ready charts.
           </p>
           <p className="text-gray-500 mb-10 text-base">
@@ -55,9 +59,9 @@ export default function LandingPage() {
           </p>
 
           {/* Download Banner */}
-          <div className="max-w-2xl mx-auto mb-8 bg-white border-2 border-excel rounded-2xl p-5 shadow-md">
+          <div className="max-w-2xl mx-auto mb-8 bg-white border-2 border-laci rounded-2xl p-5 shadow-md">
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-excel-light rounded-xl flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-laci-light rounded-xl flex items-center justify-center">
                 <span className="text-2xl">📥</span>
               </div>
               <div className="flex-1 text-left">
@@ -69,7 +73,7 @@ export default function LandingPage() {
               <a
                 href="/data/sample.csv"
                 download="sample.csv"
-                className="flex-shrink-0 bg-excel hover:bg-excel-dark text-white font-bold px-5 py-2.5 rounded-xl transition-colors duration-200 text-sm inline-flex items-center gap-2 whitespace-nowrap"
+                className="flex-shrink-0 bg-laci hover:bg-laci-dark text-white font-bold px-5 py-2.5 rounded-xl transition-colors duration-200 text-sm inline-flex items-center gap-2 whitespace-nowrap"
               >
                 <span>⬇</span>
                 <span>Download sample.csv</span>
@@ -80,7 +84,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/tutorial/1"
-              className="bg-excel hover:bg-excel-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 text-lg shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
+              className="bg-laci hover:bg-laci-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 text-lg shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
             >
               <span>Start Learning</span>
               <span>→</span>
@@ -97,7 +101,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-excel py-8 px-4">
+      <section className="bg-laci py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
@@ -121,7 +125,7 @@ export default function LandingPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-black text-gray-900 mb-3">What You'll Learn</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Five carefully structured modules that build on each other — from core concepts to consultant-grade skills.
+              Five carefully structured modules that build on each other — from core concepts to professional-grade skills.
             </p>
           </div>
 
@@ -130,7 +134,7 @@ export default function LandingPage() {
               <Link
                 key={mod.id}
                 href={`/tutorial/${mod.id}`}
-                className="group bg-white rounded-2xl border border-gray-200 p-6 hover:border-excel hover:shadow-lg transition-all duration-200 flex flex-col"
+                className="group bg-white rounded-2xl border border-gray-200 p-6 hover:border-laci hover:shadow-lg transition-all duration-200 flex flex-col"
               >
                 <div className="flex items-start justify-between mb-4">
                   <span className="text-4xl">{mod.icon}</span>
@@ -140,8 +144,8 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex-1">
-                  <div className="text-xs font-bold text-excel mb-1">Module {mod.id}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-excel transition-colors">
+                  <div className="text-xs font-bold text-laci mb-1">Module {mod.id}</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-laci transition-colors">
                     {mod.title}
                   </h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{mod.tagline}</p>
@@ -151,7 +155,7 @@ export default function LandingPage() {
                   <span className="text-xs text-gray-400 flex items-center gap-1">
                     ⏱ {mod.estimatedMinutes} min
                   </span>
-                  <span className="text-xs font-semibold text-excel group-hover:translate-x-1 transition-transform inline-block">
+                  <span className="text-xs font-semibold text-laci group-hover:translate-x-1 transition-transform inline-block">
                     Start →
                   </span>
                 </div>
@@ -159,11 +163,11 @@ export default function LandingPage() {
             ))}
 
             {/* Completion card */}
-            <div className="bg-gradient-to-br from-excel-light to-white rounded-2xl border border-excel/30 p-6 flex flex-col items-center justify-center text-center">
+            <div className="bg-gradient-to-br from-laci-light to-white rounded-2xl border border-laci/30 p-6 flex flex-col items-center justify-center text-center">
               <div className="text-4xl mb-3">🎓</div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Course Certificate</h3>
               <p className="text-sm text-gray-500">
-                Complete all 5 modules to earn your Excel for Consultants completion badge.
+                Complete all 5 modules to earn your LACI Excel Workshop completion badge.
               </p>
             </div>
           </div>
@@ -185,7 +189,7 @@ export default function LandingPage() {
                 step: '01',
                 title: 'Learn',
                 description:
-                  'Each module starts with clear concept explanations and a real-world worked example drawn from consulting scenarios.',
+                  'Each module starts with clear concept explanations and a real-world worked example drawn from a nonprofit donor dataset.',
               },
               {
                 icon: '✏️',
@@ -203,10 +207,10 @@ export default function LandingPage() {
               },
             ].map((item) => (
               <div key={item.step} className="relative text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-excel-light rounded-2xl mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-laci-light rounded-2xl mb-4">
                   <span className="text-3xl">{item.icon}</span>
                 </div>
-                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1 text-xs font-bold text-excel/30">
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1 text-xs font-bold text-laci/30">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
@@ -218,7 +222,7 @@ export default function LandingPage() {
           <div className="text-center mt-12">
             <Link
               href="/tutorial/1"
-              className="bg-excel hover:bg-excel-dark text-white font-bold px-10 py-4 rounded-xl transition-all duration-200 text-lg shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+              className="bg-laci hover:bg-laci-dark text-white font-bold px-10 py-4 rounded-xl transition-all duration-200 text-lg shadow-lg hover:shadow-xl inline-flex items-center gap-2"
             >
               <span>Get Started — It's Free</span>
               <span>→</span>
@@ -228,12 +232,12 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 py-8 px-4 text-center text-sm text-gray-400">
+      <footer className="bg-laci py-8 px-4 text-center text-sm">
         <div className="flex items-center justify-center gap-2 mb-2">
           <span className="text-xl">📊</span>
-          <span className="font-semibold text-gray-600">Excel for Consultants</span>
+          <span className="font-semibold text-white">LACI Excel Workshop</span>
         </div>
-        <p>An interactive tutorial to sharpen your Excel skills for professional use.</p>
+        <p className="text-white/60">A training resource by Los Angeles Community Impact</p>
       </footer>
     </div>
   );

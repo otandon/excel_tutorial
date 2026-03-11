@@ -6,10 +6,10 @@ import { TutorialProvider } from '@/context/TutorialContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Excel for Consultants | Interactive Tutorial',
+  title: 'LACI Excel Workshop | Los Angeles Community Impact',
   description:
-    'Master Excel skills used by top consultants — from foundations to PivotTables and charts. ~30 minutes, 5 modules, 15 quiz questions.',
-  keywords: 'Excel tutorial, Excel for consultants, VLOOKUP, PivotTable, Excel formulas',
+    'A training resource by Los Angeles Community Impact. Master Excel skills from foundations to PivotTables and charts. ~30 minutes, 5 modules, 15 quiz questions.',
+  keywords: 'Excel tutorial, LACI, Los Angeles Community Impact, VLOOKUP, PivotTable, Excel formulas',
 };
 
 export default function RootLayout({

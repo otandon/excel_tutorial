@@ -9,10 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        excel: {
-          DEFAULT: '#217346',
-          light: '#f0f7f2',
-          dark: '#1a5c38',
+        laci: {
+          DEFAULT: '#1B2A4A',
+          light: '#EEF1F7',
+          dark: '#141F38',
         },
       },
     },
