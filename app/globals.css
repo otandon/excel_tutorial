@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .formula-block {
+    @apply font-mono text-sm bg-gray-100 text-excel px-3 py-2 rounded-md border border-gray-200 block;
+  }
+
+  .concept-card {
+    @apply bg-white rounded-xl border border-gray-200 p-6 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-excel hover:bg-excel-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-lg border border-gray-300 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .level-badge-beginner {
+    @apply bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+
+  .level-badge-intermediate {
+    @apply bg-amber-100 text-amber-700 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+
+  .level-badge-advanced {
+    @apply bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+}
